@@ -9,7 +9,7 @@
   padding-left: 5%;
 }
 
-.App-header > h1 {
+.App-header>h1 {
   color: dodgerblue;
 }
 
@@ -23,10 +23,16 @@ h2 {
 
 li {
   text-align: center;
-  margin: 5px 0px;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+li:hover {
+  color: dodgerblue;
 }
 
 ul {
+  display: flex;
   list-style-type: none;
   padding-inline-start: 0px;
 }

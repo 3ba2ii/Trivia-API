@@ -100,6 +100,7 @@ class QuestionView extends Component {
 					totalQuestions: result.total_questions,
 					currentCategory: result.current_category,
 				});
+
 				return;
 			},
 			error: (error) => {
@@ -146,16 +147,17 @@ class QuestionView extends Component {
 									this.getByCategory(id);
 								}}
 							>
-								{this.state.categories[id]}
 								<img
 									className="category"
 									src={`${this.state.categories[id]}.svg`}
 								/>
+								{this.state.categories[id]}
 							</li>
 						))}
 					</ul>
 					<Search submitSearch={this.submitSearch} />
 				</div>
+
 				<div className="questions-list">
 					<h2>Questions</h2>
 					{this.state.questions.map((q, ind) => (
@@ -163,7 +165,7 @@ class QuestionView extends Component {
 							key={q.id}
 							question={q.question}
 							answer={q.answer}
-							category={this.state.categories[q.category]}
+							category={this.state.categories[q.category - 1]}
 							difficulty={q.difficulty}
 							questionAction={this.questionAction(q.id)}
 						/>

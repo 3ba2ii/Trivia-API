@@ -20,7 +20,6 @@ class FormView extends Component {
 			url: `/categories`, //TODO: update request URL
 			type: "GET",
 			success: (result) => {
-				console.log(result.categories);
 				let temp = {};
 				result.categories.map((res) => (temp[res["id"]] = res["type"]));
 				this.setState({ categories: temp });
