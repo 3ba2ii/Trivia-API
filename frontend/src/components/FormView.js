@@ -51,6 +51,7 @@ class FormView extends Component {
 			crossDomain: true,
 			success: (result) => {
 				document.getElementById("add-question-form").reset();
+				this.props.history.push("/");
 				return;
 			},
 			error: (error) => {
